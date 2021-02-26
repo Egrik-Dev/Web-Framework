@@ -1,18 +1,13 @@
-import { User } from "./models/User";
+import { Collection } from "./models/Collection";
+import { User, UserProps } from "./models/User";
 
-const user = User.buildUser({ name: `Egor`, age: 30 });
+const userCollection = new Collection<User, UserProps>(
+  `http://localhost:3000/users`,
+  (json: UserProps) => User.buildUser(json)
+);
 
-user.on(`change`, () => {
-  console.log(`Our user was changed`);
+userCollection.on(`change`, () => {
+  console.log(userCollection);
 });
 
-user.on(`save`, () => {
-  console.log(`Data saved`);
-});
-
-user.on(`error`, () => {
-  throw new Error(`The data was not saved`);
-});
-
-user.save();
-console.log(user);
+userCollection.fetch();
