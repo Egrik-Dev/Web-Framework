@@ -19,6 +19,21 @@
       "name": "Egor",
       "age": 30,
       "id": 4
+    },
+    {
+      "name": "Ben",
+      "age": 22,
+      "id": 5
+    },
+    {
+      "name": "Ben",
+      "age": 22,
+      "id": 6
+    },
+    {
+      "name": "Richard",
+      "age": 22,
+      "id": 7
     }
   ]
 }
